@@ -4,16 +4,16 @@ import numpy as np
 
 class Octagon:
     def __init__(self, side):
-        self.side = side  # Длина стороны октагона
+        self.side = side  # Длина стороны восьмиугольника
         self.angle = 135  # Угол между сторонами (константа)
 
     # Методы для радиусов окружностей
     def circumscribed_circle_radius(self):
-        # Радиус описанной окружности: R = (a/2) * sqrt(4 + 2√2)
+        # Радиус описанной окружности
         return (self.side / 2) * math.sqrt(4 + 2 * math.sqrt(2))
 
     def inscribed_circle_radius(self):
-        # Радиус вписанной окружности: r = (a/2) * (1 + √2)
+        # Радиус вписанной окружности
         return (self.side / 2) * (1 + math.sqrt(2))
 
     # Методы для площадей
@@ -23,7 +23,7 @@ class Octagon:
     def inscribed_circle_area(self):
         return math.pi * (self.inscribed_circle_radius() ** 2)
 
-    # Площадь и периметр октагона
+    # Площадь и периметр восьмиугольника
     def octagon_area(self):
         return 2 * (1 + math.sqrt(2)) * (self.side ** 2)
 
@@ -32,16 +32,16 @@ class Octagon:
 
     # Визуализация
     def draw(self):
-        center_x, center_y = 0, 0  # Центр в (0, 0)
+        center_x, center_y = 0, 0 
         R = self.circumscribed_circle_radius()
         r = self.inscribed_circle_radius()
 
-        # Координаты вершин октагона
+        # Координаты вершин восьмиугольника
         angles = np.linspace(0, 2 * np.pi, 9)[:-1]
         x = center_x + R * np.cos(angles)
         y = center_y + R * np.sin(angles)
 
-        # Отрисовка октагона
+        # Отрисовка восьмиугольника
         plt.plot(np.append(x, x[0]), np.append(y, y[0]), label="Octagon", color="blue", linewidth=2)
 
         # Отрисовка описанной окружности
