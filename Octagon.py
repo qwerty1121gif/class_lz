@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class Octagon:
-    def init(self, side):
+    def __init__(self, side):
         self.side = side  # Длина стороны октагона
         self.angle = 135  # Угол между сторонами (константа)
 
