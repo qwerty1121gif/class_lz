@@ -42,22 +42,22 @@ class Octagon:
         y = center_y + R * np.sin(angles)
 
         # Отрисовка восьмиугольника
-        plt.plot(np.append(x, x[0]), np.append(y, y[0]), label="Octagon", color="blue", linewidth=2)
+        plt.plot(np.append(x, x[0]), np.append(y, y[0]), label="Восьмиугольник", color="blue", linewidth=2)
 
         # Отрисовка описанной окружности
         circle_angles = np.linspace(0, 2 * np.pi, 100)
         cx = center_x + R * np.cos(circle_angles)
         cy = center_y + R * np.sin(circle_angles)
-        plt.plot(cx, cy, label="Circumscribed Circle", color="green")
+        plt.plot(cx, cy, label="Описанная окружность", color="green")
 
         # Отрисовка вписанной окружности
         ix = center_x + r * np.cos(circle_angles)
         iy = center_y + r * np.sin(circle_angles)
-        plt.plot(ix, iy, label="Inscribed Circle", color="red")
+        plt.plot(ix, iy, label="Вписанная окружность", color="red")
 
         # Настройки графика
         plt.gca().set_aspect("equal")
-        plt.title("Октагон с окружностями")
+        plt.title("Восьмиугольник с окружностями")
         plt.xlabel("Ось X")
         plt.ylabel("Ось Y")
         plt.legend()
