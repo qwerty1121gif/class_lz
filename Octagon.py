@@ -48,12 +48,12 @@ class Octagon:
         circle_angles = np.linspace(0, 2 * np.pi, 100)
         cx = center_x + R * np.cos(circle_angles)
         cy = center_y + R * np.sin(circle_angles)
-        plt.plot(cx, cy, label="Circumscribed Circle", color="green", linestyle="--")
+        plt.plot(cx, cy, label="Circumscribed Circle", color="green")
 
         # Отрисовка вписанной окружности
         ix = center_x + r * np.cos(circle_angles)
         iy = center_y + r * np.sin(circle_angles)
-        plt.plot(ix, iy, label="Inscribed Circle", color="red", linestyle=":")
+        plt.plot(ix, iy, label="Inscribed Circle", color="red")
 
         # Настройки графика
         plt.gca().set_aspect("equal")
